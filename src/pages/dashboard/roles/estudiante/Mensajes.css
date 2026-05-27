@@ -1,0 +1,307 @@
+/* Estilos para la página de Mensajes del Estudiante */
+
+.mensajes-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #6b7280;
+}
+
+/* Header */
+.mensajes-header {
+  margin-bottom: 32px;
+}
+
+.mensajes-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1d3557;
+  margin-bottom: 8px;
+}
+
+.mensajes-header p {
+  font-size: 16px;
+  color: #64748b;
+}
+
+/* Lista de mensajes */
+.mensajes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mensajes-dia {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fecha-separador {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 12px 0;
+}
+
+.fecha-separador span {
+  background: #f1f5f9;
+  color: #64748b;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.fecha-separador::before,
+.fecha-separador::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.fecha-separador::before {
+  margin-right: 12px;
+}
+
+.fecha-separador::after {
+  margin-left: 12px;
+}
+
+/* Tarjeta de mensaje */
+.mensaje-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mensaje-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.mensaje-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.mensaje-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.mensaje-info {
+  flex: 1;
+}
+
+.mensaje-titulo {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1d3557;
+  margin-bottom: 4px;
+}
+
+.mensaje-hora {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.mensaje-tipo {
+  flex-shrink: 0;
+}
+
+.tipo-badge {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.mensaje-contenido {
+  margin-bottom: 16px;
+}
+
+.mensaje-texto {
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* Actividades relacionadas */
+.mensaje-actividades {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.mensaje-actividades h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d3557;
+  margin-bottom: 8px;
+}
+
+.mensaje-actividades ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mensaje-actividades li {
+  font-size: 13px;
+  color: #64748b;
+  padding: 4px 0;
+  padding-left: 16px;
+  position: relative;
+}
+
+.mensaje-actividades li::before {
+  content: '📝';
+  position: absolute;
+  left: 0;
+}
+
+/* Recomendaciones */
+.mensaje-recomendaciones {
+  background: #eff6ff;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.mensaje-recomendaciones h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d3557;
+  margin-bottom: 8px;
+}
+
+.mensaje-recomendaciones ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mensaje-recomendaciones li {
+  font-size: 13px;
+  color: #374151;
+  padding: 4px 0;
+  padding-left: 16px;
+  position: relative;
+}
+
+.mensaje-recomendaciones li::before {
+  content: '💡';
+  position: absolute;
+  left: 0;
+}
+
+/* No mensajes */
+.no-mensajes {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 2px dashed #e2e8f0;
+}
+
+.no-mensajes-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.no-mensajes h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1d3557;
+  margin-bottom: 8px;
+}
+
+.no-mensajes p {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 32px;
+}
+
+.mensajes-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+}
+
+.info-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.info-content h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d3557;
+  margin-bottom: 4px;
+}
+
+.info-content p {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mensajes-container {
+    padding: 16px;
+  }
+  
+  .mensaje-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .mensaje-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .mensaje-tipo {
+    align-self: flex-start;
+  }
+  
+  .mensajes-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+}

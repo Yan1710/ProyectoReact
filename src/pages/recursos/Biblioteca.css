@@ -1,0 +1,369 @@
+/* Biblioteca de Salud Mental Styles */
+.biblioteca-container {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  padding: 60px 40px;
+  margin: 40px 0;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.biblioteca-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa, #93c5fd);
+}
+
+.biblioteca-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.biblioteca-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.biblioteca-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.biblioteca-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.libro-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.libro-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.libro-imagen-container {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+}
+
+.libro-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.libro-card:hover .libro-imagen {
+  transform: scale(1.05);
+}
+
+.libro-categoria {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.categoria-badge {
+  background: rgba(59, 130, 246, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.libro-contenido {
+  padding: 25px;
+}
+
+.libro-titulo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.libro-autor {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.libro-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.paginas {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.calificacion {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.estrella-llena {
+  color: #fbbf24;
+  font-size: 0.9rem;
+}
+
+.estrella-vacia {
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.calificacion-numero {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.libro-descripcion {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.libro-acciones {
+  display: block;
+}
+
+.btn-leer-mas {
+  width: 100%;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-leer-mas:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+.biblioteca-footer {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.biblioteca-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #3b82f6;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.biblioteca-info {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.biblioteca-info p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.link-contacto {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.link-contacto:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .biblioteca-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .biblioteca-container {
+    padding: 40px 20px;
+    margin: 20px 0;
+  }
+  
+  .biblioteca-header h2 {
+    font-size: 2rem;
+  }
+  
+  .biblioteca-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .libro-imagen-container {
+    height: 200px;
+  }
+  
+  .libro-contenido {
+    padding: 20px;
+  }
+  
+  .biboteca-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .biblioteca-container {
+    padding: 30px 15px;
+  }
+  
+  .biblioteca-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .biblioteca-header p {
+    font-size: 1rem;
+  }
+  
+  .libro-imagen-container {
+    height: 180px;
+  }
+  
+  .libro-contenido {
+    padding: 15px;
+  }
+  
+  .libro-titulo {
+    font-size: 1.1rem;
+  }
+  
+  .libro-acciones {
+    flex-direction: column;
+  }
+  
+  .btn-leer-mas,
+  .btn-favoritos {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .biblioteca-stats {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .stat-item {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+/* Animaciones adicionales */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.libro-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.libro-card:nth-child(1) { animation-delay: 0.1s; }
+.libro-card:nth-child(2) { animation-delay: 0.2s; }
+.libro-card:nth-child(3) { animation-delay: 0.3s; }
+.libro-card:nth-child(4) { animation-delay: 0.4s; }
+.libro-card:nth-child(5) { animation-delay: 0.5s; }
+.libro-card:nth-child(6) { animation-delay: 0.6s; }
+.libro-card:nth-child(7) { animation-delay: 0.7s; }
+.libro-card:nth-child(8) { animation-delay: 0.8s; }

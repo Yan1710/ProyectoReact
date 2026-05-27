@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+
+body {
+  background: #ffffff;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(196,116,138,.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 90%, rgba(106,172,170,.04) 0%, transparent 50%),
+    radial-gradient(circle at 60% 40%, rgba(196,154,106,.03) 0%, transparent 40%);
+  font-family: 'Outfit', sans-serif;
+  color: #2d2d2d;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #ffffff; }
+::-webkit-scrollbar-thumb { background: #e8e8e8; border-radius: 99px; }
+
+/* ── Animations ── */
+@keyframes fadeUp   { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn   { from{opacity:0} to{opacity:1} }
+@keyframes popIn    { 0%{transform:scale(.7) rotate(-6deg);opacity:0} 70%{transform:scale(1.06) rotate(.8deg)} 100%{transform:scale(1) rotate(0);opacity:1} }
+@keyframes shake    { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-7px)} 40%{transform:translateX(7px)} 60%{transform:translateX(-4px)} 80%{transform:translateX(4px)} }
+@keyframes matchPop { 0%{transform:scale(1)} 40%{transform:scale(1.1)} 100%{transform:scale(1)} }
+@keyframes glow     { 0%,100%{box-shadow:0 0 0 0 rgba(106,172,170,.3)} 50%{box-shadow:0 0 14px 3px rgba(106,172,170,.12)} }
+@keyframes float    { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+@keyframes slideIn  { from{opacity:0;transform:translateX(-20px)} to{opacity:1;transform:translateX(0)} }
+@keyframes scaleIn  { from{opacity:0;transform:scale(.9)} to{opacity:1;transform:scale(1)} }
+@keyframes confettiFall { 0%{transform:translateY(-10px) rotate(0deg);opacity:1} 100%{transform:translateY(100px) rotate(360deg);opacity:0} }
+@keyframes shimmer  { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+@keyframes ripple   { 0%{transform:scale(0);opacity:.5} 100%{transform:scale(3);opacity:0} }
+@keyframes spin     { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes heartbeat{ 0%,100%{transform:scale(1)} 50%{transform:scale(1.15)} }
+
+/* ── Interactive Elements ── */
+.btn {
+  border: none;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(.34,1.56,.64,1);
+  position: relative;
+  overflow: hidden;
+}
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--x,50%) var(--y,50%), rgba(255,255,255,.35) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+.btn:hover::after { opacity: 1; }
+.btn:hover  { transform: translateY(-2px) scale(1.03); }
+.btn:active { transform: scale(.96); }
+
+/* ── Card Flip 3D ── */
+.card-flip { perspective: 800px; }
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(.4,0,.2,1);
+}
+.card-inner.flipped { transform: rotateY(180deg); }
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-back { transform: rotateY(180deg); }
+
+/* ── Special Effects ── */
+.shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.6) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease infinite;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  animation: confettiFall 0.8s ease forwards;
+}
+
+.fade-up   { animation: fadeUp   .5s cubic-bezier(.22,1,.36,1) both; }
+.fade-in   { animation: fadeIn   .35s ease both; }
+.pop-in    { animation: popIn    .4s  cubic-bezier(.34,1.56,.64,1) both; }
+.scale-in  { animation: scaleIn  .3s  ease both; }
+.slide-in  { animation: slideIn  .35s ease both; }
+.shake     { animation: shake    .4s  ease; }
+.float     { animation: float    3s   ease infinite; }
+.heartbeat { animation: heartbeat 1.5s ease infinite; }
+
+/* ── Interactive elements ── */
+.btn {
+  border: none; cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  transition: all .2s cubic-bezier(.34,1.56,.64,1);
+  position: relative; overflow: hidden;
+}
+.btn::after {
+  content:''; position:absolute; inset:0; border-radius:inherit;
+  background: radial-gradient(circle at var(--x,50%) var(--y,50%), rgba(255,255,255,.35) 0%, transparent 60%);
+  opacity:0; transition:opacity .2s;
+  pointer-events:none;
+}
+.btn:hover::after { opacity:1; }
+.btn:hover  { transform: translateY(-2px) scale(1.03); }
+.btn:active { transform: scale(.96); }
+
+/* ── Card flip 3D ── */
+.card-flip { perspective: 800px; }
+.card-inner {
+  position:relative; width:100%; height:100%;
+  transform-style:preserve-3d;
+  transition:transform .55s cubic-bezier(.4,0,.2,1);
+}
+.card-inner.flipped { transform:rotateY(180deg); }
+.card-face {
+  position:absolute; inset:0; backface-visibility:hidden; border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+}
+.card-back { transform:rotateY(180deg); }
+
+/* ── Special effects ── */
+.shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.6) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease infinite;
+}
+
+.confetti-piece {
+  position:absolute; width:8px; height:8px; border-radius:2px;
+  animation: confettiFall .8s ease forwards;
+}
+
+/* ══════════════════════════════════════════════════
+   HEADER (clases usadas desde el JSX)
+══════════════════════════════════════════════════ */
+.juegos-emocionales-container {
+  background: linear-gradient(145deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 60px 40px;
+  margin: 40px 0;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.juegos-emocionales-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa, #93c5fd);
+}
+
+.juegos-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.juegos-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.juegos-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}

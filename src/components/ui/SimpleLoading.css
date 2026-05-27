@@ -1,0 +1,220 @@
+.simple-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  min-height: 200px;
+}
+
+.loading-muneco-container {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.loading-muneco {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.muneco-face {
+  position: relative;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4);
+  border: 3px solid #fbbf24;
+}
+
+.muneco-eyes {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.eye {
+  font-size: 12px;
+  color: #1f2937;
+  animation: blink 4s infinite;
+}
+
+.eye.right {
+  animation-delay: 0.1s;
+}
+
+.muneco-mouth {
+  font-size: 18px;
+  color: #1f2937;
+  animation: smile 2s ease-in-out infinite;
+}
+
+.loading-sparkles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sparkle {
+  position: absolute;
+  font-size: 1rem;
+  animation: sparkleFloat 2s ease-in-out infinite;
+}
+
+.sparkle-1 {
+  top: -10px;
+  left: -10px;
+  animation-delay: 0s;
+}
+
+.sparkle-2 {
+  top: -15px;
+  right: -5px;
+  animation-delay: 0.3s;
+}
+
+.sparkle-3 {
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 0.6s;
+}
+
+.loading-dots {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  border-radius: 50%;
+  animation: dotPulse 1.4s ease-in-out infinite;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.loading-text {
+  color: #64748b;
+  font-size: 1.1rem;
+  font-weight: 600;
+  animation: textFade 0.8s ease-in;
+  text-align: center;
+}
+
+/* Animaciones mejoradas */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+@keyframes blink {
+  0%, 90%, 100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  95% {
+    opacity: 0.3;
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes smile {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes sparkleFloat {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.2);
+  }
+}
+
+@keyframes dotPulse {
+  0%, 60%, 100% {
+    opacity: 0.4;
+    transform: scale(0.8);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.3);
+    box-shadow: 0 6px 25px rgba(59, 130, 246, 0.8);
+  }
+}
+
+@keyframes textFade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efecto de brillo adicional */
+.loading-muneco-container::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
